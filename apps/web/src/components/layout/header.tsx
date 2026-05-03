@@ -65,10 +65,10 @@ export function Header() {
 
         {/* Right Side */}
         <div className="flex items-center gap-3">
-          {/* Mainnet badge */}
-          <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-neon-green/[0.06] border border-neon-green/10">
-            <div className="w-1.5 h-1.5 rounded-full bg-neon-green pulse-dot" />
-            <span className="text-[11px] font-mono text-neon-green/80 uppercase tracking-wider">Mainnet</span>
+          {/* Network badge */}
+          <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-neon-orange/[0.06] border border-neon-orange/10">
+            <div className="w-1.5 h-1.5 rounded-full bg-neon-orange pulse-dot" />
+            <span className="text-[11px] font-mono text-neon-orange/80 uppercase tracking-wider">Devnet</span>
           </div>
 
           {/* Wallet Button */}

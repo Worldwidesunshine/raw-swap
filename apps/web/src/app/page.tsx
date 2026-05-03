@@ -29,10 +29,10 @@ export default function HomePage() {
       <div className="relative">
         {/* Hero */}
         <section className="text-center pt-16 pb-8 px-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-neon-green/[0.06] border border-neon-green/15 mb-6">
-            <div className="w-1.5 h-1.5 rounded-full bg-neon-green pulse-dot" />
-            <span className="text-[11px] font-mono font-semibold text-neon-green uppercase tracking-widest">
-              Live on Solana Mainnet
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-neon-orange/[0.06] border border-neon-orange/15 mb-6">
+            <div className="w-1.5 h-1.5 rounded-full bg-neon-orange pulse-dot" />
+            <span className="text-[11px] font-mono font-semibold text-neon-orange uppercase tracking-widest">
+              Devnet Beta
             </span>
           </div>
 

@@ -51,9 +51,9 @@ export function Footer() {
           <div className="space-y-3">
             <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Community</div>
             <div className="space-y-2">
-              <FooterLink href="#" label="Twitter / X" />
-              <FooterLink href="#" label="Discord" />
-              <FooterLink href="#" label="GitHub" />
+              <FooterLink href="https://x.com/rawswap" label="Twitter / X" />
+              <FooterLink href="https://discord.gg/rawswap" label="Discord" />
+              <FooterLink href="https://github.com/Worldwidesunshine/raw-swap" label="GitHub" />
             </div>
           </div>
         </div>

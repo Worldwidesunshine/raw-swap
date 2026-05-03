@@ -5,8 +5,21 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "Raw Swap — Bare-Metal Solana Execution",
-  description: "Self-custodial Solana token swaps with Jupiter routing and Jito-aware execution.",
+  title: "RawSwap — Bare-Metal Solana Execution",
+  description: "Self-custodial Solana token swaps with Jupiter routing, Jito MEV protection, cross-chain bridge, and liquidity staking.",
+  keywords: ["solana", "dex", "swap", "jupiter", "jito", "mev protection", "defi", "rawswap"],
+  openGraph: {
+    title: "RawSwap — Bare-Metal Solana Execution",
+    description: "Self-custodial Solana token swaps with Jupiter routing and Jito-aware execution. No wrappers. No bloat.",
+    url: "https://rawswap.net",
+    siteName: "RawSwap",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RawSwap — Bare-Metal Solana Execution",
+    description: "Self-custodial Solana swaps via Jupiter + Jito. MEV-protected.",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
