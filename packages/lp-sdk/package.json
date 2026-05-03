@@ -18,7 +18,11 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@coral-xyz/anchor": "~0.32.1",
+    "@orca-so/common-sdk": "^0.7.0",
+    "@orca-so/whirlpools-sdk": "^0.20.0",
     "@rawswap/shared": "workspace:*",
+    "@raydium-io/raydium-sdk-v2": "0.2.41-alpha",
     "@solana/web3.js": "^1.98.0"
   },
   "devDependencies": {
