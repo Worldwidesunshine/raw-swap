@@ -1,0 +1,26 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "../..",
+    "composite": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "noEmit": false,
+    "paths": {
+      "@rawswap/cross-chain": ["packages/cross-chain/src/index.ts"],
+      "@rawswap/shared": ["packages/shared/src/index.ts"],
+      "@rawswap/tx-composer": ["packages/tx-composer/src/index.ts"],
+      "@rawswap/tx-verifier": ["packages/tx-verifier/src/index.ts"],
+      "@rawswap/lp-sdk": ["packages/lp-sdk/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.test.ts"],
+  "references": [
+    { "path": "../../packages/cross-chain" },
+    { "path": "../../packages/shared" },
+    { "path": "../../packages/lp-sdk" },
+    { "path": "../../packages/tx-composer" },
+    { "path": "../../packages/tx-verifier" }
+  ]
+}

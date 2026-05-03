@@ -1,0 +1,13 @@
+[Unit]
+Description=Raw Swap Web
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/raw-swap/apps/web
+EnvironmentFile=/opt/raw-swap/.env
+ExecStart=/usr/bin/pnpm start
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

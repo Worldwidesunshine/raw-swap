@@ -1,0 +1,13 @@
+[Unit]
+Description=Raw Swap API
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/raw-swap/apps/api
+EnvironmentFile=/opt/raw-swap/.env
+ExecStart=/usr/bin/node dist/server.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

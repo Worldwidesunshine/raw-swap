@@ -1,0 +1,23 @@
+{
+  "low": {
+    "computeUnitPriceMicroLamports": 1000,
+    "jitoTipLamports": 5000,
+    "maxTotalFeeLamports": 25000
+  },
+  "normal": {
+    "computeUnitPriceMicroLamports": 5000,
+    "jitoTipLamports": 10000,
+    "maxTotalFeeLamports": 75000
+  },
+  "high": {
+    "computeUnitPriceMicroLamports": 15000,
+    "jitoTipLamports": 25000,
+    "maxTotalFeeLamports": 200000
+  },
+  "launch": {
+    "computeUnitPriceMicroLamports": 50000,
+    "jitoTipLamports": 100000,
+    "maxTotalFeeLamports": 750000,
+    "internalOnly": true
+  }
+}

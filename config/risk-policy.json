@@ -1,0 +1,20 @@
+{
+  "maxSlippageBps": 500,
+  "maxPriorityFeeLamports": 5000000,
+  "maxJitoTipLamports": 5000000,
+  "maxProtocolFeeLamports": 5000000000,
+  "allowlistOnly": false,
+  "blockedToken2022Extensions": [
+    "transferFee",
+    "mintCloseAuthority",
+    "defaultAccountState",
+    "memoTransfer",
+    "nonTransferable",
+    "interestBearingConfig",
+    "transferHook",
+    "permanentDelegate",
+    "pausableConfig",
+    "confidentialTransferMint",
+    "confidentialTransferAccount"
+  ]
+}

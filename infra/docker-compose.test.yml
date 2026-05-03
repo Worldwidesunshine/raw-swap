@@ -1,0 +1,58 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: rawswap
+      POSTGRES_PASSWORD: rawswap
+      POSTGRES_DB: rawswap
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rawswap -d rawswap"]
+      interval: 3s
+      timeout: 2s
+      retries: 10
+      start_period: 3s
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 2s
+      retries: 10
+      start_period: 2s
+
+  api:
+    build:
+      context: ..
+      dockerfile: apps/api/Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      DATABASE_URL: postgres://rawswap:rawswap@postgres:5432/rawswap
+      REDIS_URL: redis://redis:6379
+      PORT: "3001"
+      NODE_ENV: test
+      SOLANA_RPC_URL: https://api.mainnet-beta.solana.com
+      JITO_BLOCK_ENGINE_URL: https://mainnet.block-engine.jito.wtf
+      EXECUTION_ACCESS_TOKEN_SECRET: rawswap-smoke-test-secret
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3001/ready').then((res) => process.exit(res.ok ? 0 : 1)).catch(() => process.exit(1))",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+      start_period: 10s

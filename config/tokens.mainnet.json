@@ -1,0 +1,20 @@
+{
+  "tokens": [
+    {
+      "symbol": "SOL",
+      "name": "Solana",
+      "mint": "So11111111111111111111111111111111111111112",
+      "decimals": 9,
+      "isNative": true,
+      "tokenProgram": "native"
+    },
+    {
+      "symbol": "USDC",
+      "name": "USD Coin",
+      "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "decimals": 6,
+      "isNative": false,
+      "tokenProgram": "spl-token"
+    }
+  ]
+}

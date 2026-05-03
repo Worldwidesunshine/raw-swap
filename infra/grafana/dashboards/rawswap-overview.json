@@ -1,0 +1,68 @@
+{
+  "title": "Raw Swap Overview",
+  "uid": "rawswap-overview",
+  "schemaVersion": 39,
+  "version": 2,
+  "timezone": "browser",
+  "refresh": "30s",
+  "time": { "from": "now-6h", "to": "now" },
+  "panels": [
+    {
+      "id": 1,
+      "type": "timeseries",
+      "title": "Quote duration p(obs)",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "histogram_quantile(0.50, sum(rate(rawswap_quote_duration_ms_bucket[$__rate_interval])) by (le))",
+          "legendFormat": "p50"
+        },
+        {
+          "refId": "B",
+          "expr": "histogram_quantile(0.95, sum(rate(rawswap_quote_duration_ms_bucket[$__rate_interval])) by (le))",
+          "legendFormat": "p95"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "timeseries",
+      "title": "Submit / simulation duration p95 (ms)",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "histogram_quantile(0.95, sum(rate(rawswap_submit_duration_ms_bucket[$__rate_interval])) by (le))",
+          "legendFormat": "submit p95"
+        },
+        {
+          "refId": "B",
+          "expr": "histogram_quantile(0.95, sum(rate(rawswap_simulation_duration_ms_bucket[$__rate_interval])) by (le))",
+          "legendFormat": "sim p95"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "stat",
+      "title": "Swap outcomes (5m rate)",
+      "gridPos": { "h": 4, "w": 8, "x": 0, "y": 8 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        {
+          "refId": "success",
+          "expr": "sum(rate(rawswap_success_total[5m]))",
+          "legendFormat": "success/s"
+        },
+        {
+          "refId": "failure",
+          "expr": "sum(rate(rawswap_failure_total[5m]))",
+          "legendFormat": "fail/s"
+        }
+      ]
+    }
+  ]
+}

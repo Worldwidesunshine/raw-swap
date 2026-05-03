@@ -1,0 +1,13 @@
+[Unit]
+Description=Raw Swap Worker
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/raw-swap/apps/worker
+EnvironmentFile=/opt/raw-swap/.env
+ExecStart=/usr/bin/node dist/index.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
